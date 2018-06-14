@@ -7,7 +7,7 @@ class App extends Component {
   componentDidMount() {
     $(() => {
       window.recurly.configure({
-        publicKey: "ewr1-mzq0x6rWIma79YHS1vIP3c",
+        publicKey: "ewr1-tgjkZBrY3eLDBSHgbWfXv9",
         fields: {
           all: {
             style: {
@@ -25,11 +25,34 @@ class App extends Component {
             }
           },
           number: {
-            selector: '#recurly-number',
             style: {
               fontColor: '#000000',
               placeholder: {
                 content: 'Credit Card Number'
+              }
+            }
+          },
+          month: {
+            style: {
+              fontColor: '#000000',
+              placeholder: {
+                content: 'Month'
+              }
+            }
+          },
+          year: {
+            style: {
+              fontColor: '#000000',
+              placeholder: {
+                content: 'Year'
+              }
+            }
+          },
+          cvv: {
+            style: {
+              fontColor: '#000000',
+              placeholder: {
+                content: 'CVV'
               }
             }
           }
@@ -65,6 +88,9 @@ class App extends Component {
           <div data-recurly="month"></div>
           <div data-recurly="year"></div>
           <div data-recurly="cvv"></div>
+          <input type="text" placeholder="First Name" data-recurly="first_name" id="first_name"/>
+          <input type="text" placeholder="Last Name" data-recurly="last_name" id="last_name"/>
+          <input type="hidden" value="US" data-recurly="country"/>
           <button onClick={this.handleFormSubmit} >
             Place order
           </button>
